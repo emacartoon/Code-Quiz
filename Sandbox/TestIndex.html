@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .container {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    #start-prompt {
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <!-- Start Prompt -->
+        <div id="start-prompt">
+            <h1>Take the Quiz</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quaerat ipsam atque hic reprehenderit repellendus est rem aspernatur, in praesentium ullam placeat dicta cumque error nobis nulla voluptatibus vitae id.
+            </p>
+            <button>Start!</button>
+        </div>
+        <div id="question-container">
+            <h3 id="question-text"></h3>
+            <div id="answers"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+var $startBtn = document.querySelector("#start");
+var $start = document.querySelector("#start-prompt");
+var $timer = document.querySelector("#timer");
+var time = 100;
+// I click start btn
+// a timer starts & I get a q
+
+var questions = [
+    {
+        text: "Is the sky blue?",
+        answers: ["True", "False"],
+        correctAnswer: ["True"],
+    }
+];
+
+//Listen for start btn click
+$startBtn.addEventListener("click", function (e){
+    //start a timer
+    $timer.textContent = time;
+    setInterval(function () {
+        time--;
+        $timer.textContent = time;
+    }, 1000);
+    // hide start prompt
+    $start.style.display = "none";
+    //display question
+    $questionText.textContent = questions[0].text;
+    // render answers
+
+    questions[0].answers.forEach(function (item) {
+        var $answerBtn = document.createElement("button");
+        $answerBtn.textContent = item;
+        $answerBtn.addEventListener("click", handleAnswerClick);
+        $answers.append($answerBtn);
+    });
+});
+
+
+//     AS A coding boot camp student
+// I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+// SO THAT I can gauge my progress compared to my peers
+// ```
+
+// ## Acceptance Criteria
+
+// ```
+// GIVEN I am taking a code quiz
+// WHEN I click the start button
+// THEN a timer starts and I am presented with a question
+// WHEN I answer a question
+// THEN I am presented with another question
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and my score
+</script>
