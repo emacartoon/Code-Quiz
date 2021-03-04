@@ -82,15 +82,17 @@ $startBtn.addEventListener("click", function (e) {
     // render answers
     questions[questionIndex].answers.forEach(function (item) {
       // create button
-      var $btn = document.createElement("button");
+      var btn = document.createElement("button");
       // set btn text
-      $btn.textContent = item;
+      btn.textContent = item;
       // append to options div
-      $answers.append($btn);
+      $answers.append(btn);
     });
   }
+  // Shows the Question
+  renderQuestion();
 
-  $btn.addEventListener("click", function (e) {
+  btn.addEventListener("click", function (e) {
     // if target is not a button stop early;
     if (!e.target.matches("button")) return;
 
@@ -106,7 +108,7 @@ $startBtn.addEventListener("click", function (e) {
     if (questionIndex === questions.length) {
       // End Game
     } else {
-      displayQuestion();
+      renderQuestion();
     }
     console.log(answ);
   });
