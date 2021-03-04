@@ -12,19 +12,18 @@ var $explanation = document.querySelector("#explanation");
 var $gamestatus = document.querySelector("#game-status");
 var $luck = document.querySelector("#luck");
 var questionIndex = 0;
-var timer;
 
 // Set 5 questions and 5 answer arrays. each with 1 correct answer
 var questions = [
   {
     text: "Which company created JavaScript?",
     answers: ["IBM", "Macintosh", "Netscape", "Google"],
-    correctAnswer: ["Netscape"]
+    correctAnswer: ["Netscape"],
   },
   {
     text: "Are Java and JavaScript the same language?",
     answers: ["Yes", "No"],
-    correctAnswer: ["No"]
+    correctAnswer: ["No"],
   },
   {
     text: "What does a concatenate function do?",
@@ -33,7 +32,7 @@ var questions = [
       "Display one string after another",
       "Convince cats to go eat",
     ],
-    correctAnswer: ["Display one string after another"]
+    correctAnswer: ["Display one string after another"],
   },
   {
     text: "Where does JavaScript go in best practices?",
@@ -44,7 +43,7 @@ var questions = [
       "Before </body>",
       "After </html>",
     ],
-    correctAnswer: ["In the <head>"]
+    correctAnswer: ["In the <head>"],
   },
   {
     text: "Where do you call down an external JavaScript file?",
@@ -55,7 +54,7 @@ var questions = [
       "Before </body>",
       "After </html>",
     ],
-    correctAnswer: ["Before </body>"]
+    correctAnswer: ["Before </body>"],
   },
 ];
 
@@ -76,65 +75,62 @@ $startBtn.addEventListener("click", function (e) {
   $start.style.display = "none";
   $explanation.style.display = "none";
   $questionPrompt.style.display = "block";
-  
-  function renderQuestion() {
-  //display question
-  $questionText.textContent = questions[questionIndex].text;
-  // render answers
-  questions[questionIndex].answers.forEach(function (item) {
-    // create button
-    var $btn = document.createElement("button");
-    // set btn text
-    $btn.textContent = item;
-    // append to options div
-    $answers.append($btn);
 
-});
+  function renderQuestion() {
+    //display question
+    $questionText.textContent = questions[questionIndex].text;
+    // render answers
+    questions[questionIndex].answers.forEach(function (item) {
+      // create button
+      var $btn = document.createElement("button");
+      // set btn text
+      $btn.textContent = item;
+      // append to options div
+      $answers.append($btn);
+    });
   }
 
-
-$btn.addEventListener("click", function (e) {
+  $btn.addEventListener("click", function (e) {
     // if target is not a button stop early;
     if (!e.target.matches("button")) return;
 
     // check correctness
     var answ = e.target.textContent;
     if (answ === questions[questionIndex].correctAnswer) {
-        console.log("Correct");
+      console.log("Correct");
     } else {
-        console.log("Incorrect");
+      console.log("Incorrect");
     }
     questionIndex++;
 
     if (questionIndex === questions.length) {
-        // End Game
+      // End Game
     } else {
-        displayQuestion();
+      displayQuestion();
     }
     console.log(answ);
-})
+  });
 
   // if answer incorrect, subtract time
 
   if (time === 0) {
-    //     // Stops execution of action at set interval
+    // Stops execution of action at set interval
     clearInterval(timeInterval);
-    //     // Calls function to display text in #winlose
+    // Calls function to display text in #winlose
     displayMessage();
-}
-
+  }
+});
 // function (endgame){
 
 // }
 
-//      Calculate score
-// Check ig highscore - if yes, get initals
+// Calculate score
+// Check if highscore - if yes, get initals
 // Save score + initials to localStorage
 
 // If score > hs1, hs2, hs3, hs4, hs5, replace value in localstorage array
 // Move hs_ to next rank based on which is replaced.
-// localStorage.setItem("hs1", JSON.stringify(hs1));
+// localStorage.setItem("hs1", JSON.stringify(hs1)); ??
 // renderLastRegistered();
 // toggle #highscores
-});
 // Button $hscore displays #highscores
