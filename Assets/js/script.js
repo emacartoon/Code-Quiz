@@ -11,6 +11,8 @@ var $hscore = document.querySelector("#hscore");
 var $explanation = document.querySelector("#explanation");
 var $gamestatus = document.querySelector("#game-status");
 var $luck = document.querySelector("#luck");
+var questionIndex = 0;
+var timer;
 
 // Set 5 questions and 5 answer arrays. each with 1 correct answer
 var questions = [
@@ -57,9 +59,11 @@ var questions = [
   },
 ];
 
+$scores.style.display = "none";
+$gamestatus.style.display = "none";
+
 // I click start btn
 // a timer starts & I get q + a
-
 //Listen for start btn click
 $startBtn.addEventListener("click", function (e) {
   //start a timer
@@ -71,14 +75,13 @@ $startBtn.addEventListener("click", function (e) {
   // hide start prompt
   $start.style.display = "none";
   $explanation.style.display = "none";
-  $gamestatus.style.display = "none";
-  $scores.style.display = "none";
   $questionPrompt.style.display = "all";
   
+  function renderQuestion() {
   //display question
-  $questionText.textContent = questions[0].text;
+  $questionText.textContent = questions[questionIndex].text;
   // render answers
-  questions[0].answers.forEach(function (item) {
+  questions[questionIndex].answers.forEach(function (item) {
     // create button
     var $btn = document.createElement("button");
     // set btn text
@@ -87,18 +90,32 @@ $startBtn.addEventListener("click", function (e) {
     $answers.append($btn);
 
 });
+  }
 
 // // if answer correct, q[i+1] and a[i+1]
 // if (questions[0].correctAnswer.textContent === onclick.answersbtn){
 //     find parent replace [n+1]
 // } 
-var $answersbtn = 
-$answersbtn.addEventListener("click", handleAnswersClick);
-function handleAnswersClick() {
-    var answord = document.getElementById($answersbtn).value;
+$btn.addEventListener("click", function (e) {
+    // if target is not a button stop early;
+    if (!e.target.matches("button")) return;
 
-    console.log(answord);
-}
+    // check correctness
+    var answ = e.target.textContent;
+    if (answ === questions[questionIndex].correctAnswer) {
+        console.log("Correct");
+    } else {
+        console.log("Incorrect");
+    }
+    questionIndex++;
+
+    if (questionIndex === questions.length) {
+        // End Game
+    } else {
+        displayQuestion();
+    }
+    console.log(answ);
+})
 
   // if answer incorrect, subtract time
 
@@ -108,6 +125,10 @@ function handleAnswersClick() {
     //     // Calls function to display text in #winlose
     displayMessage();
 }
+
+// function (endgame){
+
+// }
 
 //      Calculate score
 // Check ig highscore - if yes, get initals
