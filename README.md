@@ -9,7 +9,7 @@ Click the start button
 click question answer button
     if answer correct
         presented with q[i+1]
-        presented with q[i+1]
+        presented with a[i+1]
 
     if question incorrect
         time subtracted
@@ -34,3 +34,10 @@ Question Page
         c)
         d)
 Score Page
+
+## Mockup
+![A layout of the projected colours, buttons, and type of all the quiz elements](./Assets/img/LayoutMockup.png)
+
+
+## Sources
+https://www.sitepoint.com/simple-javascript-quiz/
