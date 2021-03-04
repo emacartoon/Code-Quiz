@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>EmaCartoon's Code Quiz</title>
 </head>
 <body>
+    <div id="hscore">High Scores</div>
     <div class="container">
         <!-- Start Prompt -->
         <div id="start-prompt">
-            <h1>Take the Quiz</h1>
+            <h1>Code Quiz</h1>
             <p id="explanation">
-                Think you know JavaScript? How are you at the history and usage of it? Test your knowledge below! And if you're "on top" of it, don't forget to add your initials to display your high score of bragging rights.
+                Think you know JavaScript? How are you at the history and usage of it? Test your knowledge below! Your time is your score. And if you're "on top" of it, don't forget to add your initials to display your high score of bragging rights.
             </p>
-            <button>Start!</button>
+            <button id="start">Start!</button>
         </div>
+        <!-- Timer  -->
         <div id="timer"></div>
+        <!-- Questions -->
         <div id="question-container">
             <h3 id="question-text"></h3>
             <div id="answers"></div>
+        </div>
+        <!-- Win/Lose? -->
+        <div id="game-status">
+            <h1 style="font-weight: normal;" id="winlose"></h1>
+            <p id="luck">Better Luck Next Time!</p>
+        </div>
+        <!-- High Scores -->
+        <div id="highscores">
+            <h1 style="font-weight: normal;">High Scores</h1>
+            <h2 style="font-weight: normal;" id="hs1"></h2>
+            <h2 style="font-weight: normal;" id="hs2"></h2>
+            <h2 style="font-weight: normal;" id="hs3"></h2>
+            <h2 style="font-weight: normal;" id="hs4"></h2>
+            <h2 style="font-weight: normal;" id="hs5"></h2>
         </div>
     </div>
 

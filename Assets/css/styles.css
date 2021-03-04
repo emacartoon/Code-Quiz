@@ -1,8 +1,83 @@
+body {
+    margin: 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4d4d4d;
+    font-size: large;
+}
+
 .container {
     width: 700px;
-    margin: 0 auto;
+    margin: -4rem auto 0 auto;
+    border: 1px solid #707070;
+    padding: 1rem;
+    height: 100%;
+}
+
+.text-center{
+    text-align: center;
 }
 
 #start-prompt {
+    color: #4d4d4d;
     text-align: center;
+
+}
+
+#start {
+    background-color: #dc9ce4;
+    /* color: #4d4d4d; */
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #707070;
+    border-radius: 25px;
+    min-width: 10rem;
+    font-size: large;
+
+}
+
+#timer {
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    right: 0;
+}
+
+#hscore {
+    background-color: #b7c8f9;
+    /* color: #4d4d4d; */
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #707070;
+    border-radius: 25px;
+    width: 10rem;
+}
+
+#answer {
+    background-color: #acebd1;
+    /* color: #4d4d4d; */
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #707070;
+    border-radius: 25px;
+    min-width: 10rem;
+    font-size: large;
+
+}
+
+#game-status {
+    padding: 1rem;
+    text-align: center;
+}
+
+#luck {
+    font-size: larger;
+}
+
+#highscores {
+    padding: 1rem;
+    text-align: center;
+}
+
+.hide {
+    display: none;
 }
