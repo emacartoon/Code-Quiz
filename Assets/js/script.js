@@ -75,7 +75,7 @@ $startBtn.addEventListener("click", function (e) {
   // hide start prompt
   $start.style.display = "none";
   $explanation.style.display = "none";
-  $questionPrompt.style.display = "all";
+  $questionPrompt.style.display = "block";
   
   function renderQuestion() {
   //display question
@@ -92,10 +92,7 @@ $startBtn.addEventListener("click", function (e) {
 });
   }
 
-// // if answer correct, q[i+1] and a[i+1]
-// if (questions[0].correctAnswer.textContent === onclick.answersbtn){
-//     find parent replace [n+1]
-// } 
+
 $btn.addEventListener("click", function (e) {
     // if target is not a button stop early;
     if (!e.target.matches("button")) return;
