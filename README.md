@@ -1,5 +1,8 @@
 # Code-Quiz
 
+## Link
+[https://emacartoon.github.io/Code-Quiz/index.html](https://emacartoon.github.io/Code-Quiz/index.html)
+
 LOGIC - JS
 Click the start button
     Timer starts
@@ -41,3 +44,4 @@ Score Page
 
 ## Sources
 https://www.sitepoint.com/simple-javascript-quiz/
+MDN

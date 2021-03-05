@@ -5,7 +5,7 @@ var $questionText = document.querySelector("#question-text");
 var $answers = document.querySelector("#answers");
 var $timer = document.querySelector("#timer");
 var time = 100;
-var recentscores = [hs1, hs2, hs3, hs4, hs5];
+var recentscores = [hs5, hs4, hs3, hs2, hs1];
 var $hs1 = document.querySelector("#hs1");
 var $hs2 = document.querySelector("#hs2");
 var $hs3 = document.querySelector("#hs3");
@@ -82,7 +82,7 @@ $startBtn.addEventListener("click", function startGame() {
     // hide start prompt
     $startBtn.style.display = "none";
     $explanation.style.display = "none";
-    $questionPrompt.style.display = "block";
+    $questionPrompt.style.display = "";
 
     function renderQuestion() {
         $answers.innerHTML = "";
@@ -143,13 +143,13 @@ function endGame() {
     $questionText.innerHTML = "";
     $answers.innerHTML = "";
     // Display results
-    $gamestatus.style.display = "block";
-    $scores.style.display = "block";
+    $gamestatus.style.display = "";
+    $scores.style.display = "";
     
     if (time === 0) {
         // Calls function to display text in #winlose
         $winLose.innerHTML = "You Lost! :("; 
-        $luck.style.display = "block";
+        $luck.style.display = "";
         
     } else {
         $winLose.innerHTML = "You Won!";
@@ -157,7 +157,7 @@ function endGame() {
     };
     // Play again button shows
     $startBtn.innerHTML = "Play Again";
-    $startBtn.style.display = "block";
+    $startBtn.style.display = "";
     $startBtn.addEventListener("click", function(e) {
         document.location.href = "";
     });
@@ -193,7 +193,20 @@ document.addEventListener("click", function (e) {
         localStorage.setItem("scoreName", scorer.value);
         // Save score + initials to localStorage
     }
+    
+    for (let i = 0; i < recentscores.length; i++) {
+        const element = recentscores[i++];
+        
+    };
+
 });
+
+
+
+
+
+
+
 
 // Pulling score name from localStorage
 var scoreName = window.localStorage.getItem("scoreName");
@@ -202,7 +215,7 @@ console.log(scoreName);
 console.log(lastScore);
 var tempting = scoreName.concat(" " + lastScore);
 // scorelist[i] -> scorelist[i++]
-recentscores.unshift(tempting);
+recentscores.splice(4, 1, tempting);
 tempting = "";
 
 // toggle #recentscores
@@ -211,17 +224,17 @@ tempting = "";
 // Button $hscore displays #recentscores
 $hscore.addEventListener("click", function(e) {
     if ($scores.style.display = "none"){
-        $scores.style.display = "block";
+        $scores.style.display = "";
     } else {
         $scores.style.display = "none";
     };
 });
 
-$hs1.innerHTML = recentscores[0];
-$hs2.innerHTML = recentscores[1];
+$hs1.innerHTML = recentscores[4];
+$hs2.innerHTML = recentscores[3];
 $hs3.innerHTML = recentscores[2];
-$hs4.innerHTML = recentscores[3];
-$hs5.innerHTML = recentscores[4];
+$hs4.innerHTML = recentscores[1];
+$hs5.innerHTML = recentscores[0];
 
 // localStorage.setItem("hs1", JSON.stringify(hs1)); ??
 // renderLastRegistered();
