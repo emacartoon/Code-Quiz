@@ -7,7 +7,7 @@ body {
 
 .container {
     width: 700px;
-    margin: -4rem auto 0 auto;
+    margin: -1rem auto 0 auto;
     border: 1px solid #707070;
     padding: 1rem;
     height: 100%;
@@ -26,7 +26,6 @@ body {
 #start {
     background-color: #dc9ce4;
     /* color: #4d4d4d; */
-    text-align: center;
     padding: 1rem;
     border: 1px solid #707070;
     border-radius: 25px;
@@ -45,7 +44,6 @@ body {
 #hscore {
     background-color: #b7c8f9;
     /* color: #4d4d4d; */
-    text-align: center;
     padding: 1rem;
     border: 1px solid #707070;
     border-radius: 25px;
@@ -55,7 +53,6 @@ body {
 #answer {
     background-color: #acebd1;
     /* color: #4d4d4d; */
-    text-align: center;
     padding: 1rem;
     border: 1px solid #707070;
     border-radius: 25px;
@@ -66,7 +63,6 @@ body {
 
 #game-status {
     padding: 1rem;
-    text-align: center;
 }
 
 #luck {
@@ -75,7 +71,6 @@ body {
 
 #highscores {
     padding: 1rem;
-    text-align: center;
 }
 
 .hide {
